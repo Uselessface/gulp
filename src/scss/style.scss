@@ -1,0 +1,197 @@
+@import "reset";
+
+@mixin font ($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@import "fonts";
+
+body{
+  background:linear-gradient(0deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.68)), url('/img/body__bg.png');
+  background-repeat: repeat-y;
+  background-position: 0% 0%;
+  background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0px auto;
+  overflow-x: hidden;
+}
+
+section,header,footer{
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0px auto;
+}
+main{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  margin: 0px auto;
+}
+.wrapper{
+  display: flex;
+  max-width: 2000px;
+  width: 100%;
+  margin: 0px auto;
+  justify-content: space-between;
+}
+
+.section-header{
+  background-color: rgba($color: #ffffff, $alpha: 1.0);
+  padding: 40px 5px 35px;
+  &__logo{
+    margin-left: 40px;
+  }
+  .logo{
+    display: flex;
+    align-items: center;
+    justify-self: flex-start;
+    &__text{
+      margin-left: 30px;
+      font-size: 30px;
+      color: rgb(0, 0, 0);
+      line-height: 1.2;
+      font-weight: 300;
+    }
+  }
+  &__social{
+    margin-right: 120px;
+  }
+  .social{
+    display: flex;
+    align-items: center;
+    &__icon__link{
+      display: block;
+      cursor: pointer;
+    } 
+    .social__icon_tiu{
+        margin-left: 15px;
+    }
+    &__contacts{
+      margin-left: 30px;
+      &_tel{
+        margin-top: 15px;
+      }
+      &_link{
+        font-size: 29px;
+        font-weight: 300;
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.about-us{
+  border-radius: 9px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -2.696px -1.315px 17px 0px rgba(2, 2, 6, 0.41);
+  max-width: 1255px;
+  &_margin{
+    margin: 60px auto 0px;
+  }
+  &__container{
+    padding: 40px;
+    display: flex;
+    .about-us__square_logo{
+      flex: 0 0 60%;
+      background-image: url(/img/prodArt__bg.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      .square_logo__text{
+        padding: 0px 50px 10px 0px ;
+        color: #ffffff;
+        text-transform: uppercase;
+        font-size: 76px;
+        font-weight: 900;
+      }
+    }
+    .about-us__square_info{
+      flex: 0 1 52%;
+      padding: 50px 18px 0px 30px;
+      .info__text{
+        line-height: 1.49;
+        font-size: 35px;
+        font-family: 'Bad Script', cursive;
+      }
+      .price_toggle{
+        max-width: 300px;
+        padding: 15px 0px;
+        margin-top: 70px;
+        display: block;
+        text-align: center;
+        font-size: 38px;
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        background-image: url(/img/price_toggle.png);
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.section-products_row1{
+  margin-top: 225px;
+}
+
+.single-product{
+  max-width: 580px;
+  width: 100%;
+  background-color: rgba($color: #fff, $alpha: 1.0);
+  border-radius: 5px;
+  box-shadow: 0px 0px 21px 0px rgba(19, 18, 20, 0.48);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__image-container{
+    position: relative;
+    &_cube-tea{
+      top: -123px;
+      left: 15px;
+      margin-bottom: -123px;
+    }
+  }
+  &__text-container{
+    margin-top: 25px;
+    padding: 0px 34px;
+    &__header{
+      font-size: 44px;
+      line-height: 0.402;
+      &_green{
+        color: rgba($color: #4f9343, $alpha: 1.0);
+      }
+    }
+    &__text{
+      margin-top: 20px;
+      font-size: 25px;
+      line-height: 1.5;
+      font-weight: 300;
+      > a{
+        display: block;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+.section-header_footer{
+  margin-top: 40px;
+}
